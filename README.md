@@ -2,7 +2,6 @@
 
 
 ![1748762324191](image/README/1748762324191.png)
-![Uploading WhatsApp Image 2025-06-01 at 14.35.39_32e56947.jpg…]()
 
 
 ## Deskripsi Proyek
