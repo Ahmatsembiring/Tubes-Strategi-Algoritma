@@ -1,7 +1,9 @@
-# Diamond Bot Game - GACOR Implementation
+![WhatsApp Image 2025-06-01 at 14 35 39_b6ae2aca](https://github.com/user-attachments/assets/9fe3f065-1878-4876-93a7-d7fb7713c887)# Diamond Bot Game - GACOR Implementation
 
+![WhatsApp Image 2025-06-01 at 14 35 39_b6ae2aca](https://github.com/user-attachments/assets/97e7e75b-8dc1-4d22-8589-2a0eaa5f4e8c)
 
 ![1748762324191](image/README/1748762324191.png)
+
 
 
 ## Deskripsi Proyek
