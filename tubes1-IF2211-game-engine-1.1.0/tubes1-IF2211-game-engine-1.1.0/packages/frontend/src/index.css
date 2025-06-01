@@ -1,0 +1,314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 dark:bg-gray-800 font-sans antialiased text-etimo dark:text-slate-400;
+  }
+
+  .text-header {
+    @apply text-sm lg:text-xl;
+  }
+
+  .text-header p {
+    @apply text-lg lg:text-3xl;
+  }
+
+  .text-label {
+    @apply font-sans not-italic font-bold mb-1;
+    @apply text-sm 4xl:text-xl text-etimo dark:text-slate-400 block;
+  }
+
+  .text-body {
+    @apply font-sans not-italic mb-1;
+    @apply text-sm 4xl:text-lg text-etimo dark:text-slate-400 block;
+  }
+
+  a,
+  button {
+    @apply hover:text-etimo-light dark:hover:text-zinc-50 dark:text-slate-400 ease-in duration-200;
+  }
+
+  p {
+    @apply text-etimo dark:text-slate-400;
+  }
+
+  tr {
+    @apply bg-gray-100 dark:bg-slate-400;
+  }
+
+  td {
+    @apply dark:text-slate-800;
+  }
+
+  select {
+    @apply dark:text-slate-800 dark:bg-slate-300 text-sm;
+  }
+
+  *,
+  ::before,
+  ::after {
+    @apply border-gray-400 dark:border-gray-200;
+  }
+}
+
+@layer components {
+  .modal-wrapper {
+    @apply flex flex-col absolute top-[15%] lg:top-[20%] min-w-[360px] border border-gray-200 bg-white dark:bg-gray-800 rounded-md p-4 shadow-md left-[50%] translate-x-[-50%];
+  }
+
+  .modal-button {
+    @apply absolute text-2xl top-[6px] right-[12px];
+  }
+}
+
+.dark {
+  @apply bg-gray-800 text-slate-400;
+}
+
+.moving-image-container {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  overflow: hidden;
+}
+
+.moving-image {
+  position: absolute;
+  animation: moveImage 70s linear infinite;
+  width: 100px;
+  height: auto;
+}
+
+.rotate {
+  animation-name: spin;
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+img.diamond {
+  max-width: 100%; /* Ensure the image fits within its container */
+  height: auto;
+  display: block; /* Remove any potential inline layout issues */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Set the width to 100% to match the image width */
+  height: 100%; /* Set the height to 100% to match the image height */
+  pointer-events: none; /* Allow mouse events to pass through the sparkles */
+  z-index: 2; /* Ensure the sparkles appear above the image */
+}
+
+svg#one {
+  -webkit-transform: translate(-12%, -13%);
+  transform: translate(-12%, -13%);
+}
+
+svg#two {
+  -webkit-transform: translate(65%, -110%);
+  transform: translate(65%, -110%);
+}
+svg#three {
+  -webkit-transform: translate(61%, -200%);
+  transform: translate(61%, -200%);
+}
+.group {
+  -webkit-transform: translate(42.5px, 42.5px);
+  -moz-transform: translate(42.5px, 42.5px);
+  transform: translate(42.5px, 42.5px);
+}
+path#large,
+#small {
+  -webkit-transform: translate(-42.5px, -42.5px);
+  -moz-transform: translate(-42.5px, -42.5px);
+  transform: translate(-42.5px, -42.5px);
+}
+.large {
+  -webkit-animation: large 2.5s infinite;
+  -moz-animation: large 2.5s infinite;
+}
+.large-2 {
+  -webkit-animation: large-2 2.5s infinite;
+  -moz-animation: large-2 2.5s infinite;
+}
+.small {
+  -webkit-animation: small 2.5s infinite;
+  -moz-animation: small 2.5s infinite;
+}
+@-webkit-keyframes large {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(360deg) scale(1.5);
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+@keyframes large {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+@-webkit-keyframes large-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(45deg) scale(0);
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(405deg) scale(1.1);
+    transform: rotate(405deg) scale(1.1);
+  }
+}
+@keyframes large-2 {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(405deg) scale(1.1);
+  }
+}
+@-webkit-keyframes small {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(-360deg) scale(1);
+    transform: rotate(-360deg) scale(1.5);
+  }
+}
+@keyframes small {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-360deg) scale(1.5);
+  }
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: none;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveImage {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

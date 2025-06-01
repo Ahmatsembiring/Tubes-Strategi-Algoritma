@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 20",
+  "_version": "20.1.0",
+
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "incremental": true,
+    "paths": {
+      "@etimo/diamonds2-backend/*": ["backend/src/*"],
+      "@etimo/diamonds2-frontend/*": ["frontend/src/*"],
+      "@etimo/diamonds2-types/*": ["types/src/*"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
+}

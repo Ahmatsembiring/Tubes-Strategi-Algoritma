@@ -1,0 +1,66 @@
+version: "3.7"
+
+services:
+  frontend:
+    build:
+      context: ./packages/frontend
+      target: "develop"
+    command: /bin/sh -c "VITE_API_BASE_URL=http://backend:3000/api yarn run start"
+    volumes:
+      - ./frontend/src:/app/src
+      # - /app/node_modules
+    ports:
+      - 8080:8082
+
+  backend:
+    platform: linux/x86_64
+    build:
+      context: ./packages/backend
+      target: "develop"
+    command: /bin/sh -c "npx prisma db push --accept-data-loss && npx prisma db seed && yarn start:dev"
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/prisma:/app/prisma
+      # - /app/node_modules
+    depends_on:
+      - database
+    environment:
+      ENVIRONMENT: development
+      DATABASE_URL: postgresql://diamonds:password@database:5433/diamonds?schema=public
+    ports:
+      - 8081:3000
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "1"
+
+  # bots:
+  #   build:
+  #     context: ./example-bots/python
+  #   restart: always
+  #   volumes:
+  #     - bot-data:/bot-data
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100m"
+  #       max-file: "1"
+
+  database:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_DB: diamonds
+      POSTGRES_USER: diamonds
+      POSTGRES_PASSWORD: password
+    command:
+      - "-p 5433"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5433:5433
+
+volumes:
+  db-data:
+  bot-data:
