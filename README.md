@@ -1,6 +1,6 @@
 # Diamond Bot Game - GACOR Implementation
 
-![WhatsApp Image 2025-06-01 at 14 35 39_b6ae2aca](https://github.com/user-attachments/assets/97e7e75b-8dc1-4d22-8589-2a0eaa5f4e8c)
+![WhatsApp Image 2025-06-01 at 14 35 40_4ed02679](https://github.com/user-attachments/assets/0f5c25ce-a11e-47e6-87c2-898e2d4f7d54)
 
 ![1748762324191](image/README/1748762324191.png)
 
